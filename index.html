@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ht">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edf5ff">
+  <meta name="description" content="Loovenson AI Intelligence — yon asistan dijital pou AI, rezo sosyal, sekirite, monetizasyon ak aprantisaj.">
+  <title>Loovenson AI Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home" aria-label="Loovenson AI Intelligence">
+        <span class="brand-mark">L<span>✦</span></span>
+        <span class="brand-copy"><strong>LOOVENSON</strong><small>AI INTELLIGENCE</small></span>
+      </a>
+      <button class="new-chat" id="newChatBtn"><span>＋</span> Nouvo konvèsasyon</button>
+      <div class="nav-label">ESPAS TRAVAY</div>
+      <nav class="workspace-nav" id="workspaceNav" aria-label="Espas travay">
+        <button class="nav-item active" data-mode="assistant"><span class="nav-icon">✧</span><span>AI Assistant</span></button>
+        <button class="nav-item" data-mode="prompts"><span class="nav-icon">⌘</span><span>Prompt Studio</span></button>
+        <button class="nav-item" data-mode="social"><span class="nav-icon">◎</span><span>Social Media</span></button>
+        <button class="nav-item" data-mode="security"><span class="nav-icon">◇</span><span>Sekirite dijital</span></button>
+        <button class="nav-item" data-mode="monetization"><span class="nav-icon">↗</span><span>Monetizasyon</span></button>
+        <button class="nav-item" data-mode="learning"><span class="nav-icon">▤</span><span>Digital Learning</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="online-card"><span class="status-dot"></span><div><strong>Espas entèlijans</strong><small id="connectionStatus">Pare pou konfigirasyon</small></div></div>
+        <div class="profile"><div class="avatar">LD</div><div class="profile-copy"><strong>Loovenson Dijital</strong><small>Ede moun ateri nan Dijital.</small></div><span class="profile-menu">•••</span></div>
+      </div>
+    </aside>
+
+    <main class="main-panel" id="home">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Louvri meni">☰</button>
+        <div class="breadcrumb"><span>Loovenson AI</span><span class="crumb-slash">/</span><strong id="currentWorkspace">AI Assistant</strong></div>
+        <div class="top-actions"><span class="free-badge"><span></span> MOD GRATIS</span><button class="icon-btn" id="clearBtn" title="Efase konvèsasyon an" aria-label="Efase konvèsasyon">↺</button></div>
+      </header>
+
+      <section class="chat-layout">
+        <div class="welcome" id="welcomePanel">
+          <div class="welcome-orb"><div class="orb-core">L<span>✦</span></div><i class="orb-ring ring-one"></i><i class="orb-ring ring-two"></i><i class="orb-spark spark-one">✦</i><i class="orb-spark spark-two">✧</i></div>
+          <div class="eyebrow"><span class="eyebrow-line"></span> ENTÈLIJANS POU MOND DIJITAL LA</div>
+          <h1>Bonjou, ann fè<br><span>lide yo avanse.</span></h1>
+          <p class="welcome-sub">Yon asistan dijital pou ede w reflechi pi byen, kreye pi vit, epi jwenn solisyon ki itil.</p>
+          <div class="suggestion-grid" id="suggestionGrid">
+            <button class="suggestion" data-prompt="Ede m kreye yon estrateji kontni Facebook pou grandi òganikman. Bay egzanp konkrè."><span class="suggestion-icon blue">◎</span><span><strong>Grandi sou rezo sosyal</strong><small>Kreye yon estrateji ki mache ak objektif mwen.</small></span><span class="suggestion-arrow">↗</span></button>
+            <button class="suggestion" data-prompt="Kreye yon prompt ekspè pou ede m fè travay dijital pi byen. Eksplike kijan pou m itilize li."><span class="suggestion-icon mint">⌘</span><span><strong>Kreye yon prompt ekspè</strong><small>Transfòme lide mwen an bon enstriksyon pou AI.</small></span><span class="suggestion-arrow">↗</span></button>
+            <button class="suggestion" data-prompt="Bay mwen yon lis etap pou sekirize kont Facebook mwen. Sèvi ak bon pratik ofisyèl epi avèti m sou risk yo."><span class="suggestion-icon violet">◇</span><span><strong>Pwoteje kont mwen</strong><small>Aprann rekonèt risk ak evite magouy.</small></span><span class="suggestion-arrow">↗</span></button>
+            <button class="suggestion" data-prompt="Mwen vle kòmanse yon ti biznis dijital ak yon bidjè ki prèske zewo. Ede m chwazi yon sèvis oswa pwodwi, epi bay yon plan pou teste lide a."><span class="suggestion-icon gold">↗</span><span><strong>Eksplore monetizasyon</strong><small>Idantifye yon lide biznis reyalis pou teste.</small></span><span class="suggestion-arrow">↗</span></button>
+          </div>
+        </div>
+
+        <div class="messages" id="messages" aria-live="polite" hidden></div>
+
+        <div class="composer-wrap">
+          <div class="mode-hint" id="modeHint">Poze yon kesyon oswa chwazi youn nan sijesyon yo.</div>
+          <form class="composer" id="chatForm">
+            <textarea id="userInput" rows="1" maxlength="8000" placeholder="Ekri kesyon ou la..." aria-label="Ekri kesyon ou"></textarea>
+            <div class="composer-footer"><div class="composer-tools"><button type="button" class="tool-pill" id="languageBtn" title="Lang repons lan">◉ <span>Kreyòl ayisyen</span></button><span class="privacy-note">Pa voye modpas oswa kle API.</span></div><button class="send-btn" id="sendBtn" type="submit" aria-label="Voye mesaj"><span>Voye</span><b>↑</b></button></div>
+          </form>
+          <p class="disclaimer">Loovenson AI kapab fè erè. Verifye enfòmasyon enpòtan yo ak sous ki fyab.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
